@@ -1,14 +1,21 @@
 # Aktualizacja listy działek z komentarzy FB
 
-Post: https://www.facebook.com/groups/711943943162830/posts/1820926428931237/
-Wynik: `index.html` (GitHub Pages – repo `kaapa-s/dzialeczki`) (generowany przez `scripts/gen.py`).
+Wynik: GitHub Pages – repo `kaapa-s/dzialeczki`. Jedna podstrona na post:
+
+| Podstrona | Post | Dane |
+|---|---|---|
+| `index.html` | https://www.facebook.com/groups/711943943162830/posts/1820926428931237/ (mój) | `scripts/gen.py` |
+| `post2.html` | https://www.facebook.com/groups/dzialkinasprzedazmazowieckie/permalink/2198601570722806/ (K. Borkowski – od 3000 m², las z 3 stron) | `scripts/gen2.py` |
+
+Nowy post → nowy `scripts/genN.py` (skopiuj `gen2.py`), dopisz stronę do `PAGES` w `render.py`, przegeneruj **wszystkie** strony (nawigacja). Oferta powtarzająca się w kilku postach: kopiuj autora i lokalizację 1:1 – wtedy notatka/★ są wspólne.
 
 ## Pliki
 
 | Plik | Do czego |
 |---|---|
 | `komentarze.md` | pierwotny zrzut komentarzy (ucięte linki, bez zdjęć) |
-| `scripts/gen.py` | **dane** (listy `A`, `AMB`, `NOULDK`, `B`, `D`, `E`) + generator HTML |
+| `scripts/gen.py`, `gen2.py` | **dane** posta (listy `A`, `AMB`, `NOULDK`, `B`, `D`, `E`) + wywołanie `render()` |
+| `scripts/render.py` | wspólny generator HTML (★, notatki, filtry, nawigacja `PAGES`); `amb_title`/`amb_sub` – opis sekcji A′ (w post2 = „z pinezki – przybliżone”) |
 | `scripts/cent.py` | pobiera z ULDK środki działek (do linku Google Maps) i dopisuje do `cent.json` |
 | `scripts/cent.json` | cache współrzędnych – `gen.py` wymaga wpisu dla każdego ID z list `A`/`AMB` |
 | `scripts/area.py` | liczy powierzchnie działek w ULDK – do zgadywania obrębu po powierzchni |
@@ -35,7 +42,9 @@ Wynik: `index.html` (GitHub Pages – repo `kaapa-s/dzialeczki`) (generowany prz
 ### 3. Ogłoszenia
 
 1. Każdy link otwórz w **osobnej** karcie (żeby nie stracić stanu posta) i uruchom snippet **7** – szuka „nr działki / obręb / ddd/dd” w treści i współrzędnych w HTML.
-2. Gdy numeru nie ma, a są współrzędne – `GetParcelByXY` w ULDK, ale wynik oznacz jako przybliżony (pinezki otodom bywają obok, np. Strzegocin trafia w Prusinowice).
+2. Gdy numeru nie ma, a są współrzędne – `GetParcelByXY` w ULDK, ale wynik oznacz jako przybliżony (pinezki otodom bywają obok, np. Strzegocin trafia w Prusinowice; Strzyżyna trafiła w wielki kompleks leśny). Sprawdź powierzchnię (`area.py`) – niezgodna z ogłoszeniem = pinezka obok.
+   Źródła współrzędnych: pinezka `maps.app.goo.gl` (rozwiń `curl -sI`), JSON ogłoszenia (snippet 7), **pasek współrzędnych na zrzutach z geoportalu/e-mapy** (N/E w stopniach-minutach-sekundach – to pozycja kursora, więc przybliżona; u Kdy trafiła w dobry obręb Cisse).
+   Zrzut z geoportalu z otwartym panelem działki często ma pełne ID (`141305_2.0036.149/7`) – przepisz i sprawdź w ULDK; drugą z pary ustalisz po powierzchni sąsiadów (Prusocin 149/10).
 3. **FB Marketplace** – zgoda na zasady danych już udzielona (2026-10-05), ogłoszenia otwierają się normalnie. Opis: `document.querySelector('div[role="main"]').innerText` (uciąć od „Recently listed”); numery bywają w opisie albo na zrzucie geoportalu w zdjęciach. Gdyby znów wyskoczyło „You'll need to make a choice about Marketplace” – nie klikać za użytkownika.
 4. Post FB z innego profilu: po snippecie 1 – snippet **8** (wyciąga tekst z JSON-a w HTML).
 5. curl/WebFetch do OLX/otodom/gratka nie działa (403 / przekierowanie) – tylko przez Chrome.
@@ -80,7 +89,7 @@ Zasady:
    Gdy ktoś z `B`/`D`/`E` dośle numer – przenieś go do `A`.
    ⚠ Zaznaczenia w przeglądarce (obejrzane, ★, notatki – localStorage) są przypięte do kluczy: działki z `A`/`AMB` – do ID działki, wpisy – do `"autor|lokalizacja"` (w `E`: `"autor|treść"`). Zmiana autora/lokalizacji istniejącego wpisu (albo przeniesienie z `D` do `A` ze zmienioną lokalizacją) gubi jego notatkę – wtedy trzymaj tekst bez zmian albo uprzedź użytkownika.
 2. Współrzędne nowych działek: `python3 scripts/cent.py <id> <id> ...` (dopisuje do `cent.json`).
-3. `python3 scripts/gen.py && open index.html`
+3. `python3 scripts/gen.py && python3 scripts/gen2.py && open index.html`
 4. Zamknij karty Chrome otwarte przez Claude.
 
 Link do geoportalu: `https://mapy.geoportal.gov.pl/imap/Imgp_2.html?identifyParcel=<ID>`
