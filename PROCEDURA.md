@@ -1,7 +1,7 @@
 # Aktualizacja listy działek z komentarzy FB
 
 Post: https://www.facebook.com/groups/711943943162830/posts/1820926428931237/
-Wynik: `dzialki.html` (generowany przez `scripts/gen.py`).
+Wynik: `index.html` (GitHub Pages – repo `kaapa-s/dzialeczki`) (generowany przez `scripts/gen.py`).
 
 ## Pliki
 
@@ -78,8 +78,9 @@ Zasady:
    - `D` – miejscowość bez numeru: `(autor, lokalizacja, co_wiadomo, telefon)`
    - `E` – brak konkretów: `(autor, treść, telefon)`
    Gdy ktoś z `B`/`D`/`E` dośle numer – przenieś go do `A`.
+   ⚠ Zaznaczenia w przeglądarce (obejrzane, ★, notatki – localStorage) są przypięte do kluczy: działki z `A`/`AMB` – do ID działki, wpisy – do `"autor|lokalizacja"` (w `E`: `"autor|treść"`). Zmiana autora/lokalizacji istniejącego wpisu (albo przeniesienie z `D` do `A` ze zmienioną lokalizacją) gubi jego notatkę – wtedy trzymaj tekst bez zmian albo uprzedź użytkownika.
 2. Współrzędne nowych działek: `python3 scripts/cent.py <id> <id> ...` (dopisuje do `cent.json`).
-3. `python3 scripts/gen.py && open dzialki.html`
+3. `python3 scripts/gen.py && open index.html`
 4. Zamknij karty Chrome otwarte przez Claude.
 
 Link do geoportalu: `https://mapy.geoportal.gov.pl/imap/Imgp_2.html?identifyParcel=<ID>`
