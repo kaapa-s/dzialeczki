@@ -17,8 +17,12 @@ A = [
  ("Anna Piękoś","Laskowiec, gm. Rzekuń",[P("141510_2.0009.442","442")],"Też w poście 1. 11 600 m², zadrzewiona, prąd i media w pobliżu, ok. 1,5 h od Warszawy","","komentarz",""),
  ("Mikołaj Staniaszek","Olszówka, gm. Mszczonów (między Żyrardowem a Mszczonowem)",[P("143802_5.0066.135/3","135/3")],"Też w poście 1. 1500 m² wydzielane z 135/3, media w drodze, zrobiony wjazd, niedaleko Suntago","","komentarz",""),
  ("Marcin Manowski","Grzybowo, gm. Raciąż (pow. płoński)",[P("142010_2.0015.233/"+n,"233/"+n) for n in ["2","3","4","5","6","7","8","9","10","11"]],"10 działek 1000–1391 m² (233/1 to droga wewnętrzna), bezterminowe WZ, prąd i woda w drodze asfaltowej, grunt RVI, blisko lasów sosnowych, 3 km do S7, ok. 75 km od Warszawy, 55 tys. ⚠ Za małe na kryteria postu. Numery z mapy podziału w ogłoszeniu","","FB Marketplace","https://www.facebook.com/marketplace/item/1815744756505606/"),
+ ("Małgorzata Karlikowska","Ćmiszew-Parcel, gm. Rybno (pow. sochaczewski)",[P("142806_2.0005.12/12","12/12")],"12 000 m² (w ewidencji 11 984), prąd, WZ, wjazd + pozwolenie na oficjalny zjazd z drogi, okolona drzewami i starodrzewiem, można odtworzyć staw","","komentarz (nowy)",""),
+ ("Paweł EM","Krze Duże, gm. Radziejowice (obręb „Krze”)",[P("143804_2.0009.67","67")],"1,36 ha (w ewidencji 13 536 m²), w tym ok. 3000 m² lasu, szer. ok. 26 m, dojazd z obu końców, 560 tys., ok. 40 km od Warszawy. ⚠ MPZP A.RP – zabudowa siedliskowa (zwykle trzeba być rolnikiem)","","ogłoszenie (nowy)","https://www.olx.pl/d/oferta/dzialka-1-36-ha-z-lasem-mpzp-a-rp-krze-duze-mozliwosc-budowy-domu-ok-40-km-od-warszawy-CID3-ID1bXPxm.html"),
 ]
 AMB = [
+ ("Damian Tolak","Pokrzywnica, gm. Pokrzywnica (pow. pułtuski)",[P("142403_2.0028.471/11","471/11 · pod pinezką")],"„Mam takie” + mapka: pas pola wcięty w las przy drodze. Pinezkę podał w odpowiedzi innej osobie – trafia w 471/11 (1068 m²), pewnie skraj tego pasa; sama działka wygląda na większą. Szczegóły na priv","","komentarz (nowy pin)",""),
+ ("Henryk Anczykowski / Weronika Mikołajewska","Kąck, gm. Wiązowna (pow. otwocki)",[P("141708_2.0011.634","634 · pod pinezką")],"Ta sama oferta w dwóch komentarzach. 4150 m², prostokąt 38 × 112 m, bezterminowe WZ na 2 domy jednorodzinne lub 2 dwulokalowe (900 m² PUM), prąd i woda, 8 min do A2/S17, 1,35 mln zł. Pinezka otodom trafia w 634, ale ta ma 5725 m² – przybliżone","664 090 447","komentarz + ogłoszenie (nowy)","https://www.otodom.pl/pl/oferta/dzialka-w-atrakcyjnej-lokalizacji-4150-m2wz-na-2-domy8-min-do-a2-s17-ID4D1EN"),
  ("Jarosław Kda","Cisse, gm. Szczutowo (pow. sierpecki)",[P("142706_2.0006.5/2","5/2 · z kursora na zrzucie")],"„Działki zalesione”, WZ, ponad 3000 m², 80 tys., prąd i woda w działce, OChK doliny Skrwy, przy Jeziorach Szczutowskich. Współrzędne z paska zrzutu geoportalu (pozycja kursora) trafiają w 5/2 (2915 m²) w obrębie Cisse – zgadza się z miejscowością, ale konkretny numer niepewny. ⚠ ok. 90 min+","504 004 440","OCR zdjęcia",""),
  ("Bartek Bednarczyk","Bujały-Gniewosze, gm. Jabłonna Lacka (pow. sokołowski)",[P("142904_2.0001.167/1","167/1 · pod pinezką")],"Z ogłoszenia: 3600 m² z własnym lasem, WZ na 2 domki rekreacyjne do 70 m² (zabudowa na ok. 1700 m²), obok staw strażacki, 250 tys., 1,5 h od Warszawy, pozwolenie na 2 domki. Pinezka z Google Maps trafia w 167/1, ale ta ma tylko ok. 1880 m² – możliwe, że działek jest więcej","","komentarz + ogłoszenie","https://www.olx.pl/d/oferta/sliczna-dzialka-z-lasem-wz-na-dwa-domki-spokojne-i-ciche-otoczenie-CID3-ID1coZxB.html"),
 ]
@@ -31,11 +35,12 @@ D = [
  ("Agnieszka Radzio Romańczuk","Pogorzelec, gm. Łochów","Blisko rzeka Liwiec","798 566 004"),
  ("Małgorzata Wieczorek","Ludwików, gm. Jedlińsk","Działki ok. 12 ar i 16 ar (?), sąsiadują z lasem, w pobliżu rzeka Radomka. Zdjęcie: pole przy ścianie lasu",""),
  ("Paulina Konopacka","Wola Starogrodzka, gm. Parysów","5600 m², rolno-budowlana",""),
+ ("Agnieszka Lewandowska","Gilówka Górna, gm. Iłów (pow. sochaczewski)","5700 m², uzbrojona (prąd, woda), z pozwoleniem na budowę domu",""),
+ ("Anna Malinowska","gm. Sierpc, nad rzeką Skrwą","0,7 ha bezpośrednio nad rzeką, WZ, prąd doprowadzony, blisko DK10, ok. 120 km od Warszawy – reszta na priv",""),
  ("Justyna Erkan","Pieczyska (łowickie?)","Tylko nazwa + zdjęcie lasu",""),
 ]
 E = [
  ("Maksymilian Gerej","3068 m², 50 min od Warszawy w stronę Białegostoku, zdjęcie łąki przy lesie – reszta na priv",""),
- ("Damian Tolak","„Mam takie” – mapka: pas pola w lesie przy drodze, numery nieczytelne; szczegóły na priv",""),
  ("Andrzej Dymowski","Zrzut ogłoszenia z otodom (łąka przy lesie) – na priv",""),
  ("Agnieszka Dmowska","Tylko zdjęcie: pole przy asfalcie, ściana lasu",""),
  ("Piotr Mikulski","„Spełnia warunki, media w działce” – na priv",""),
@@ -44,7 +49,7 @@ E = [
 ]
 render("post2.html", A=A, AMB=AMB, NOULDK=NOULDK, B=B, D=D, E=E,
        title="Działki z FB – post 2", h1="Działki z komentarzy – post 2 (nie mój)",
-       sub=f'Post: <a href="{POST}" target="_blank">„Szukam działki od 3000 m², max 1,5 h od Warszawy, odgrodzona lasem z trzech stron”</a> (Krzysztof Borkowski, grupa „Działki na sprzedaż mazowieckie”) · większość autorów odsyła na priv – numery wyciągnięte z ogłoszeń, mapek i pinezek · identyfikatory z ULDK · stan na 2026-10-05',
+       sub=f'Post: <a href="{POST}" target="_blank">„Szukam działki od 3000 m², max 1,5 h od Warszawy, odgrodzona lasem z trzech stron”</a> (Krzysztof Borkowski, grupa „Działki na sprzedaż mazowieckie”) · większość autorów odsyła na priv – numery wyciągnięte z ogłoszeń, mapek i pinezek · identyfikatory z ULDK · stan na 2026-10-06',
        amb_title="A′. Z pinezki / współrzędnych – przybliżone",
        amb_sub="Numer ustalony z pinezki albo współrzędnych na zrzucie – działka pod punktem, niekoniecznie ta sprzedawana. Sprawdź na geoportalu sąsiednie.",
        amb_stat="z pinezki (przybliżone)")

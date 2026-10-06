@@ -29,7 +29,10 @@ Nowy post → nowy `scripts/genN.py` (skopiuj `gen2.py`), dopisz stronę do `PAG
 2. Uruchom snippet **1** (udawanie widocznej karty). Bez tego FB nie doładowuje komentarzy, bo karta MCP jest w tle (`document.visibilityState === 'hidden'`).
 3. Uruchom snippet **2** (kolektor `window.__collect`). FB wirtualizuje listę – komentarze poza ekranem znikają z DOM, więc trzeba zbierać na bieżąco.
 4. Przewijaj okienko posta **kółkiem myszy** (`computer → scroll` w środek okienka: 3 w górę, 10 w dół, `wait 3`, `__collect()`), w `browser_batch` po kilka rund. Programowe `scrollTop` nie wyzwala doładowania. Kończ, gdy licznik przestaje rosnąć, a na dole zostają tylko szare placeholdery.
-5. Snippet **3** → lista autorów. Porównaj z tym, co już jest w `gen.py`, i wybierz nowych.
+5. Snippet **3** → lista autorów. Porównaj z tym, co już jest w `gen.py` / `gen2.py`, i wybierz nowych.
+   Wygodniej: wstrzyknij regex znanych autorów (`window.__known`, lista z `re.findall(r'^ \("([^"]+)"', …)` po pliku danych + autor posta) i funkcję `__new()`, wołaną po każdym `__collect()` – od razu widać nowych. Etykiety typu „X hours ago” pomagają znaleźć świeże wpisy znanych osób (dopiski, odpowiedzi z pinezką).
+   **Czytaj odpowiedzi pod komentarzami** – tam autorzy podają pinezki na prośbę innych (Tolak, Postek); kupujący dopytujący o cenę (Kożuchowicz, Mroczkowska) – pomijaj.
+   Narzędzie blokuje wynik JS zawierający URL z query stringiem („BLOCKED: Cookie/query string data”) – zawsze tnij `?…` albo zamieniaj URL-e na `<URL>`.
 6. Snippet **4** → treść nowych komentarzy (i odpowiedzi – często tam autor dopisuje numery, np. Szymanowska „13/1 do 13/13”).
 7. Snippet **5** → pełne linki do ogłoszeń. W `komentarze.md` linki są ucięte „...”, tu są pełne. Query string trzeba obciąć, bo narzędzie blokuje wynik z `?...`.
 
@@ -75,6 +78,7 @@ Zasady:
 - Filtruj po `mazowieckie`, a przy kilku trafieniach – po gminie / kodzie pocztowym z komentarza. Gdy dalej niejednoznaczne → sekcja `AMB` (wszyscy kandydaci).
 - Link do Google Maps (`maps.app.goo.gl/...`) rozwiń `curl -sI` (nagłówek `location` ma `q=lat,lon`) i sprawdź `GetParcelByXY`.
 - Brak obrębu w komentarzu, ale znana gmina i numery → przeleć obręby gminy (`<teryt_gminy>.0001`…`.0045`) przez `GetParcelById`, a kandydatów porównaj powierzchnią: `python3 scripts/area.py 143803_2.0001 143803_2.0009 ...` (tak ustalona Aleksandria u Boguckiej).
+- Nazwa miejscowości ≠ nazwa obrębu w ULDK (np. „Krze Duże” → obręb „Krze”, „Adamów-Wieś” → „Adamów Wieś”, „Ćmiszew Parcel” → „Ćmiszew-Parcel”). Gdy `GetParcelByIdOrNr` zwraca `-1` – próbuj wariantów pisowni, a w ostateczności przeleć obręby gminy po numerze i porównaj powierzchnię z ogłoszeniem (`143804_2.00NN.67`).
 - Numer z ogłoszenia nieobecny w ULDK (świeży podział, literówka) → sekcja `NOULDK`.
 
 ### 5. Aktualizacja strony

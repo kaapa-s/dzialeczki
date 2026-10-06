@@ -10,7 +10,7 @@ NIW="https://www.olx.pl/d/oferta/dzialka-735-m-wz-prad-las-dzialka-pod-warszawa-
 # (autor, lokalizacja, działki, uwagi, tel, źródło, link)
 A = [
  ("Hubert Górski","Niegów, gm. Zabrodzie",[P("143506_2.0014.218/7","218/7")],"2800 m², asfalt od frontu","","komentarz",""),
- ("Mateusz Postek","Łukawska Wola, gm. Głowaczów",[P("140702_5.0022.72","72"),P("140702_5.0022.63","63")],"2800 / 2900 m², WZ, 120 / 130 tys.","","komentarz",""),
+ ("Mateusz Postek","Łukawska Wola, gm. Głowaczów",[P("140702_5.0022.72","72"),P("140702_5.0022.63","63")],"2800 / 2900 m², WZ, 120 / 130 tys. Autor podał w odpowiedzi pinezkę – trafia w sąsiednią dz. 61, więc lokalizacja się zgadza","","komentarz",""),
  ("Anna Płochocka","Stanisławów (pow. miński), ul. Skrajna",[P("141214_4.0001.564/1","564/1"),P("141214_4.0001.564/2","564/2")],"po 1807 m², szer. 17,6 m, WZ, 120 zł/m². Pinezka z Google Maps trafia w 564/2","530 390 445","komentarz",""),
  ("Kamil Mrówa","Olszanka, gm. Wyszków, ul. Szmaragdowa",[P("143505_5.0014.337","337")],"2100 m², MPZP","","komentarz",""),
  ("Agata Słomska","Grzebowilk, gm. Siennica",[P("141213_5.0011.1249/6","1249/6"),P("141213_5.0011.1249/7","1249/7")],"po 1000 m²","","komentarz",""),
@@ -44,6 +44,9 @@ A = [
  ("Ur Bo","Karniewo, gm. Regimin (pow. ciechanowski)",[P("140208_2.0005.25/5","25/5")],"Ponad 1 ha (w ewidencji 11 386 m²), możliwy podział, reszta warunków spełniona wg autora","","komentarz (nowy)",""),
  ("Paweł Piętka","Urzut, gm. Nadarzyn (pow. pruszkowski), ul. Chabrowa 48",[P("142105_2.0015.12","12")],"Ok. 1550–1580 m², 490 tys. Prąd, gaz, woda i światłowód w drodze niedaleko. Identyfikator ze zrzutu geoportalu w ogłoszeniu","","FB Marketplace","https://www.facebook.com/marketplace/item/697292276283849/"),
  ("Krzysiek Bondyra","Wity, gm. Kałuszyn (pow. miński)",[P("141209_5.0026.280/"+n,"280/"+n+l) for n,l in [("1",""),("2",""),("4"," (rezerwacja)"),("5"," (rezerwacja)"),("6","")]],"6 działek z WZ przy lesie, kształt zbliżony do kwadratu (ok. 35 × 36 m): 280/1–280/5 po 1200 m², 280/6 – 1500 m². 280/3 sprzedana. Woda miejska i prąd do przyłączenia, droga powiatowa 2247W, 5,7 km do A2, ok. 58 km do Warszawy","","FB Marketplace","https://www.facebook.com/marketplace/item/27035754139422429/"),
+ ("Michał Szlaski","Żebrówka, gm. Kałuszyn (k. Mińska Maz.)",[P("141209_5.0029.578/4","578/4")],"1000 m² + ewentualnie dodatkowe 1180 m² (578/4 ma w ewidencji 1179 m² – to pewnie ta dodatkowa; numeru tej 1000 m² brak). WZ na dom, prąd na działce, woda w linii ogrodzenia, światłowód, wjazd z asfaltu, przy lesie, 99 zł/m²","","komentarz (nowy)",""),
+ ("Andrzej Kowalczyk","Laskowiec, gm. Rzekuń (Ostrołęka), ul. Energetyczna",[P("141510_2.0009.907/6","907/6 (zaznaczona)"),P("141510_2.0009.907/3","907/3 ?"),P("141510_2.0009.907/4","907/4 ?"),P("141510_2.0009.907/5","907/5 ?")],"„10 ar, 4 działki do wyboru”. Na mapce z aplikacji zaznaczona 907/6; 907/3–907/5 mają w ewidencji też po 930–970 m² i leżą obok – to pewnie pozostałe trzy (zgadnięte, dopytaj). Ten sam obręb co Laskowiec 442 Piękoś","","OCR zdjęcia (nowy)",""),
+ ("Ewelina Kurowska","Lucynów, gm. Wyszków",[P("143505_5.0011.110/3","110/3")],"1480 m² (20 × 74 m), MPZP, prąd na działce, dojazd gruntówką, blisko S8, ok. 30 min do Warszawy, 236 800 zł","","ogłoszenie (nowy)","https://www.olx.pl/d/oferta/dzialka-budowlana-1480-m-mpzp-prad-na-dzialce-lucynow-blisko-s8-CID3-ID1ciAt9.html"),
 ]
 AMB = [
  ("Piotr Miciałkiewicz","Józefów „05-52…” – kod ucięty",
@@ -80,7 +83,8 @@ D = [
  ("Piotr Kucharenko","Radzymin","Z OCR grafiki: 1106 m², MPZP jednorodzinna, prąd w drodze, woda 50 m","600 916 086"),
  ("Gosia Sikorska","Kałęczyn, gm. Stoczek","5 działek 955–1948 m², WZ, 65 zł/m², ok. 80 km. Mapka z numerami nieczytelna","510 073 295"),
  ("Hubert Kowalik","Soboklęszcz, gm. Joniec","1000 i 1500 m², WZ, prąd, 100 zł/m²",""),
- ("Katarzyna PL","Gulczewo, gm. Wyszków","1000 m², uzbrojona, 120 zł/m², zdjęcie z drona (działka „1” przy lesie)","502 916 565"),
+ ("Katarzyna PL","Gulczewo, gm. Wyszków","1000 m², uzbrojona, 120 zł/m², zdjęcie z drona (działka „1” przy lesie). W drugim komentarzu: można dokupić więcej działek","502 916 565"),
+ ("Nevena Dymowska","Wola Pękoszewska, gm. Kowiesy (pow. skierniewicki)","Działki budowlane 1505–ok. 3000 m², pod zabudowę jednorodzinną, prąd i woda, w otoczeniu lasów, 5 min od S8, ok. 50 km od Warszawy",""),
  ("Edyta Żyśkiewicz","Całowanie, gm. Karczew","„działka budowlana” – nic więcej",""),
  ("Grażyna Piasecka (polecenie)","Wilków Polski, gm. Leoncin","Poleca Janusza Jezierskiego – „miał działkę z niewielkim laskiem”","509 166 816"),
  ("Aniela Kowalik","26-910 (gm. Magnuszew)","1500 m² z domem w stanie surowym",""),
@@ -91,9 +95,10 @@ E = [
  ("Kazimierz Hencz","tylko telefon","663 157 543"),
  ("Janusz Borys","4402 m², 70 zł/m², 3 km do S7, 10 km do Grójca – brak miejscowości",""),
  ("Grzegorz Pazik","4 działki po 800 m² + 1 × 1300 m², woda i kanalizacja, ok. 1 h do Warszawy; „działka 4 od ulicy sprzedana”. Brak miejscowości, numery na mapce nieczytelne (~827/x)",""),
+ ("Michal Michal","„Priv”",""),
  ("Dawid Głowacki","tylko 4 zdjęcia działki, bez opisu",""),
 ]
 render("index.html", A=A, AMB=AMB, NOULDK=NOULDK, B=B, D=D, E=E,
        title="Działki z FB", h1="Działki z komentarzy na FB",
-       sub='Post: <a href="https://www.facebook.com/groups/711943943162830/posts/1820926428931237/" target="_blank">„Szukam działki budowlanej – do 1,5 h od Warszawy”</a> (mój) · identyfikatory działek z ULDK (GUGiK) · komentarze pobrane z FB, ogłoszenia otwarte, zdjęcia odczytane · stan na 2026-10-05',
+       sub='Post: <a href="https://www.facebook.com/groups/711943943162830/posts/1820926428931237/" target="_blank">„Szukam działki budowlanej – do 1,5 h od Warszawy”</a> (mój) · identyfikatory działek z ULDK (GUGiK) · komentarze pobrane z FB, ogłoszenia otwarte, zdjęcia odczytane · stan na 2026-10-06',
        amb_title="A′. Niejednoznaczne – jest numer, ale nie wiadomo, która miejscowość")
